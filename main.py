@@ -15,7 +15,7 @@ def main():
     try:
         X_train, x_test, y_train, y_test, phase_train, phase_test = load_data()
         
-        # Aggiungi padding ai dati di addestramento e test
+        # Add padding for input
         target_shape = (8, 1025, 1102)
         y_train = pad_spectrogram(y_train, target_shape)
         y_test = pad_spectrogram(y_test, target_shape)
