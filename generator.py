@@ -61,7 +61,7 @@ class Generator:
 
     def train(self, X_train, y_train, epochs, batch_size):
         try:
-            checkpoint = ModelCheckpoint('generator-{epoch:03d}.h5', verbose=1, monitor='val_loss', save_best_only=True,
+            checkpoint = ModelCheckpoint('generator-{epoch:03d}.weights.h5', verbose=1, monitor='val_loss', save_best_only=True,
                                          mode='auto', save_weights_only=True, save_freq='epoch')
             tensorboard = TensorBoard(log_dir='./logs_generator', histogram_freq=0, write_graph=True, write_images=True)
             history = self.model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size,
